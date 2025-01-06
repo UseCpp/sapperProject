@@ -7,6 +7,7 @@
 
 #include <QDebug>
 
+// TODO: Почему в shopgame простые методы были в отдельном файле, а здесь сложные методы в h-файле?
 // Структура данных для сохранения
 struct SaveData {
     int experience;
@@ -64,6 +65,7 @@ public:
     static SaveData load(const std::string &fileName) {
         SaveData data{};
         std::ifstream inFile(fileName, std::ios::binary);
+        // TODO: а если у тебя релизная версия?
         if (!inFile) {
              qDebug() << "Ошибка открытия файла для чтения!";
             return data;

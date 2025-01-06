@@ -1,0 +1,3780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>saperGameWindow</class>
+ <widget class="QMainWindow" name="saperGameWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1145</width>
+    <height>789</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>saperGameWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+background-color: #353b6b;
+}
+
+QGroupBox {
+    border: 2px solid rgba(0,0, 25,50); /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 10px;
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 #435085, 
+        stop:1 #2e3665
+    ); /* градиент от #435085 к #2e3665 */
+    color: white; /* цвет текста */
+}
+
+QPushButton {
+    border: 2px solid rgba(0, 0, 25, 50); /* цвет рамки */
+    border-radius: 10px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+    border: 2px solid rgba(67, 80, 133, 0.2); /* прозрачная рамка при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+    border: 2px solid rgba(0, 0, 25, 0.2); /* затемнённая рамка при нажатии */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1121</width>
+      <height>741</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="menu_QW">
+     <widget class="QGroupBox" name="exitGame_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>170</y>
+        <width>171</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="exitGame_QL">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>18</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>ЗАКРЫТЬ ИГРУ</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exitGame_QPB">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>171</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="exitGameIcon_QL">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>170</y>
+         <width>121</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/closeGameIcon.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>exitGame_QL</zorder>
+      <zorder>exitGameIcon_QL</zorder>
+      <zorder>exitGame_QPB</zorder>
+     </widget>
+     <widget class="QGroupBox" name="levelPlayer_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>401</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="levelPlayer_QL">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>20</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>20</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>УРОВЕНЬ ИГРОКА</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lvlPlayer_QL">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>32</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="lvlProgress_QPB">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QProgressBar {
+    border: 1px solid #252c56; /* рамка прогресс-бара */
+    background-color: #252c56; /* цвет фона прогресс-бара */
+    border-radius: 5px; /* радиус скругления */
+    text-align: center; /* выравнивание текста по центру */
+    color: white; /* цвет текста внутри прогресс-бара */
+}
+
+QProgressBar::chunk {
+    background-color: #3cd447; /* цвет заполненной части прогресс-бара */
+    border-radius: 5px; /* радиус скругления заполненной части */
+}
+</string>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="gameStatistics_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>10</y>
+        <width>401</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QGroupBox" name="fastWin_QGB">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_5">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>39</y>
+          <width>61</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/speedIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_5">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>САМАЯ БЫСТРАЯ
+ПОБЕДА </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="winTime_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="win_QGB">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_6">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>39</y>
+          <width>41</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/winIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_6">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+ПОБЕД</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="winCount_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="lose_QGB">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_7">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>39</y>
+          <width>44</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/loseIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_7">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+ПОРАЖЕНИЙ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="loseCount_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="loadGame_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>631</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="loadTxt_QL">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>18</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>ЗАГРУЗИТЬ СОХРАНЕННУЮ ИГРУ</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="loadGameIcon_QL">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>121</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/sdCardIcon.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="difficultInfo_QGB">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>-20</y>
+         <width>71</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>51</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/difficultIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>71</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>СЛОЖНОСТЬ
+ИГРЫ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="difficultTxt_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="bombInfo_QGB">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>-20</y>
+         <width>71</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>51</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/bombIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>71</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>МИН НА
+КАРТЕ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="bombInfo_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="moneyInfo_QGB">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>-20</y>
+         <width>71</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>51</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>71</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+МОНЕТ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="moneyCount_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="sessionInfo_QGB">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>-20</y>
+         <width>71</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>51</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/timeIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>71</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ВРЕМЯ
+СЕССИИ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sessionTime_QL">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>НЕТ</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="loadGame_QPB">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>631</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>loadGameIcon_QL</zorder>
+      <zorder>difficultInfo_QGB</zorder>
+      <zorder>bombInfo_QGB</zorder>
+      <zorder>moneyInfo_QGB</zorder>
+      <zorder>sessionInfo_QGB</zorder>
+      <zorder>loadTxt_QL</zorder>
+      <zorder>loadGame_QPB</zorder>
+     </widget>
+     <widget class="QGroupBox" name="newGame_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>631</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="newGame_QL">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>18</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>НОВАЯ ИГРА</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="newGameIcon_QL">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>131</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/newGameIcon.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="easyStart_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>190</width>
+         <height>107</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL">
+        <property name="geometry">
+         <rect>
+          <x>1</x>
+          <y>41</y>
+          <width>181</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>18</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ЛЕГКО</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL">
+        <property name="geometry">
+         <rect>
+          <x>-2</x>
+          <y>71</y>
+          <width>191</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>МАЛЕНЬКОЕ ПОЛЕ. МАЛО МИН</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="easyStart_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>3</y>
+          <width>191</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="midStart_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>225</x>
+         <y>40</y>
+         <width>190</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="midTxt_QL">
+        <property name="geometry">
+         <rect>
+          <x>1</x>
+          <y>50</y>
+          <width>191</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>18</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>СРЕДНИЙ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="midDescr_QL">
+        <property name="geometry">
+         <rect>
+          <x>1</x>
+          <y>100</y>
+          <width>191</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>СРЕДНЕЕ ПОЛЕ. НЕМНОГО МИН</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="midStart_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>191</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="highStart_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>20</y>
+         <width>181</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="highTxt_QL">
+        <property name="geometry">
+         <rect>
+          <x>1</x>
+          <y>60</y>
+          <width>181</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>18</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ВЫСОКИЙ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="highDescr_QL">
+        <property name="geometry">
+         <rect>
+          <x>21</x>
+          <y>120</y>
+          <width>139</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>БОЛЬШОЕ ПОЛЕ. МНОГО МИН</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="highStart_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>181</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <zorder>newGameIcon_QL</zorder>
+      <zorder>newGame_QL</zorder>
+      <zorder>easyStart_QGB</zorder>
+      <zorder>midStart_QGB</zorder>
+      <zorder>highStart_QGB</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="game_QW">
+     <widget class="QPushButton" name="saveExitMenu_QPB">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift Light Condensed</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: 2px solid rgba(0, 0, 25, 50); /* цвет рамки */
+    border-radius: 10px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 1.0), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 1.0)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 1.0), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 1.0)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+    border: 2px solid rgba(67, 80, 133, 0.2); /* прозрачная рамка при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 1.0), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 1.0)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+    border: 2px solid rgba(0, 0, 25, 0.2); /* затемнённая рамка при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>СОХРАНИТЬ И ВЫЙТИ</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="fieldPlay_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>801</width>
+        <height>681</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="shop_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>290</y>
+        <width>281</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QGroupBox" name="buyFlag_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="flagDescr_QL">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>8</y>
+          <width>61</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ФЛАЖОК</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="flagTxt_QL">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>28</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КУПИТЬ ФЛАЖОК</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="flagCost_QL">
+        <property name="geometry">
+         <rect>
+          <x>158</x>
+          <y>15</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_9">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>15</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_14">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="buyFlags_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="shopTxt_QL">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>18</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>МАГАЗИН [НЕ ДОСТУПЕН]</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="randBomb_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>370</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL_3">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>8</y>
+          <width>51</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КАРТА</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL_4">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>28</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>СЛУЧАЙНАЯ БОМБА</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="opRandCost_QL">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>15</y>
+          <width>16</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_15">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>15</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_16">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="opRandBomb_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="statMap_QL">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+       <zorder>easyDescr_QL_3</zorder>
+       <zorder>easyTxt_QL_4</zorder>
+       <zorder>opRandCost_QL</zorder>
+       <zorder>icon_QL_15</zorder>
+       <zorder>icon_QL_16</zorder>
+       <zorder>statMap_QL</zorder>
+       <zorder>opRandBomb_QPB</zorder>
+      </widget>
+      <widget class="QGroupBox" name="updInvent_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL_15">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>8</y>
+          <width>71</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ИНВЕНТАРЬ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL_28">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>28</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>+КОЛ-ВО ФЛАЖКОВ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="upgradeCost_QL">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>15</y>
+          <width>16</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_39">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>15</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_40">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="updInvent_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="fUpgrInvFlag_QL">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+       <zorder>easyDescr_QL_15</zorder>
+       <zorder>easyTxt_QL_28</zorder>
+       <zorder>upgradeCost_QL</zorder>
+       <zorder>icon_QL_39</zorder>
+       <zorder>icon_QL_40</zorder>
+       <zorder>fUpgrInvFlag_QL</zorder>
+       <zorder>updInvent_QPB</zorder>
+      </widget>
+      <widget class="QGroupBox" name="buyScan_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>180</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL_16">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>8</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>СКАНЕР</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL_30">
+        <property name="geometry">
+         <rect>
+          <x>37</x>
+          <y>28</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КУПИТЬ СКАНЕР</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="scannerCost_QL">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>15</y>
+          <width>16</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_41">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>15</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_42">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="buyScanner_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="upgrInvScan_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>310</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL_17">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>8</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ВИДИМОСТЬ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL_32">
+        <property name="geometry">
+         <rect>
+          <x>43</x>
+          <y>28</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>+ОБЛАСТЬ СКАНЕРА</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="scanVisCost_QL">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>15</y>
+          <width>16</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_43">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>14</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_44">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="incrVisible_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="statUpgrScan_QL">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+       <zorder>easyDescr_QL_17</zorder>
+       <zorder>easyTxt_QL_32</zorder>
+       <zorder>scanVisCost_QL</zorder>
+       <zorder>icon_QL_43</zorder>
+       <zorder>icon_QL_44</zorder>
+       <zorder>statUpgrScan_QL</zorder>
+       <zorder>incrVisible_QPB</zorder>
+      </widget>
+      <widget class="QGroupBox" name="updInventSc_QGB">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>241</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+QGroupBox{
+border-radius: 8px; /* радиус скругления */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="easyDescr_QL_18">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>8</y>
+          <width>71</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>14</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>ИНВЕНТАРЬ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="easyTxt_QL_29">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>28</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>11</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>+КОЛ-ВО СКАНЕРОВ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="upgradeCostS_QL">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>15</y>
+          <width>16</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_45">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>15</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="icon_QL_46">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>5</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="updInventSc_QPB">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 0px; /* цвет рамки */
+    border-radius: 15px; /* радиус скругления */
+    padding: 5px 15px; /* внутренние отступы */
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(67, 80, 133, 0.1), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(46, 54, 101, 0.1)  /* нижний цвет с прозрачностью 80% */
+    ); /* градиент с прозрачностью */
+    color: white; /* цвет текста */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(80, 96, 153, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(58, 68, 111, 0.2)  /* нижний цвет с прозрачностью 80% */
+    ); /* светлее градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, 
+        x1:0, y1:0, x2:0, y2:1, 
+        stop:0 rgba(46, 54, 101, 0.2), /* верхний цвет с прозрачностью 80% */
+        stop:1 rgba(31, 38, 73, 0.2)   /* нижний цвет с прозрачностью 80% */
+    ); /* более тёмный градиент при нажатии */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sUpgrInvFlag_QL">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+       <zorder>easyDescr_QL_18</zorder>
+       <zorder>easyTxt_QL_29</zorder>
+       <zorder>upgradeCostS_QL</zorder>
+       <zorder>icon_QL_45</zorder>
+       <zorder>icon_QL_46</zorder>
+       <zorder>sUpgrInvFlag_QL</zorder>
+       <zorder>updInventSc_QPB</zorder>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="gameStatisticsO_QGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>140</y>
+        <width>281</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QGroupBox" name="moneyCount_QGB">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_10">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>39</y>
+          <width>41</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/moneyIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_10">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_10">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+МОНЕТ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="money_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="timeSession_QGB">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_11">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>39</y>
+          <width>44</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/timeIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_11">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_11">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+СКАНЕРОВ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="scans_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="flags_QGB">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>-30</y>
+         <width>101</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	border: 0px;
+	background-color: rgba(0,0,0,0.0);
+}
+
+QLabel {
+    qproperty-alignment: 'AlignCenter'; /* выравнивание текста по центру */
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="icon_QL_12">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>39</y>
+          <width>44</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/flagIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="line_QL_12">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>138</y>
+          <width>71</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>13</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="text_QL_12">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>97</y>
+          <width>111</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>КОЛ-ВО
+ФЛАЖКОВ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="flags_QL">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>146</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light Condensed</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>0/0</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="demoMove_QPB">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>СДЕЛАТЬ ХОД</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="demoCoord_QLE">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>20</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="inputMask">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>X:Y</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="gameStatisticsO_QGB_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>50</y>
+        <width>281</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="icon_QL_17">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>19</y>
+         <width>44</width>
+         <height>44</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="RAWDATA.qrc">:/RAWDATA/menu/timeIcon.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="timeSess_QL">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>20</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift Light Condensed</family>
+         <pointsize>26</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>00:00:00</string>
+       </property>
+      </widget>
+     </widget>
+     <zorder>fieldPlay_QGB</zorder>
+     <zorder>shop_QGB</zorder>
+     <zorder>saveExitMenu_QPB</zorder>
+     <zorder>gameStatisticsO_QGB</zorder>
+     <zorder>demoMove_QPB</zorder>
+     <zorder>demoCoord_QLE</zorder>
+     <zorder>gameStatisticsO_QGB_2</zorder>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1145</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="RAWDATA.qrc"/>
+ </resources>
+ <connections/>
+</ui>

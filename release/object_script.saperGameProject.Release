@@ -1,0 +1,11 @@
+release/cell.o
+release/gamefield.o
+release/main.o
+release/player.o
+release/playerprofile.o
+release/sapergamewindow.o
+release/savemanager.o
+release/shopgame.o
+release/timercore.o
+release/qrc_RAWDATA.o
+release/moc_sapergamewindow.o

@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>RAWDATA/menu/bombIcon.png</file>
+        <file>RAWDATA/menu/closeGameIcon.png</file>
+        <file>RAWDATA/menu/difficultIcon.png</file>
+        <file>RAWDATA/menu/moneyIcon.png</file>
+        <file>RAWDATA/menu/sdCardIcon.png</file>
+        <file>RAWDATA/menu/timeIcon.png</file>
+        <file>RAWDATA/menu/loseIcon.png</file>
+        <file>RAWDATA/menu/speedIcon.png</file>
+        <file>RAWDATA/menu/winIcon.png</file>
+        <file>RAWDATA/menu/newGameIcon.png</file>
+        <file>RAWDATA/menu/flagIcon.png</file>
+        <file>RAWDATA/game/cellMine.png</file>
+        <file>RAWDATA/game/cellShop.png</file>
+        <file>RAWDATA/game/emptyCell.png</file>
+        <file>RAWDATA/game/exitCell.png</file>
+        <file>RAWDATA/game/flagCell.png</file>
+        <file>RAWDATA/game/playerCell.png</file>
+        <file>RAWDATA/game/startCell.png</file>
+        <file>RAWDATA/sound/buyShop.mp3</file>
+        <file>RAWDATA/sound/openShop.mp3</file>
+        <file>RAWDATA/sound/shopLevelUp.mp3</file>
+        <file>RAWDATA/sound/explodeBomb.mp3</file>
+        <file>RAWDATA/sound/error.mp3</file>
+        <file>RAWDATA/game/emptyOpenCell.png</file>
+        <file>RAWDATA/game/detectedCell.png</file>
+        <file>RAWDATA/sound/pickupItem.mp3</file>
+        <file>RAWDATA/sound/placeItem.mp3</file>
+        <file>RAWDATA/sound/bombScanner.mp3</file>
+    </qresource>
+</RCC>

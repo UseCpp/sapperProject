@@ -1,0 +1,11 @@
+debug/cell.o
+debug/gamefield.o
+debug/main.o
+debug/player.o
+debug/playerprofile.o
+debug/sapergamewindow.o
+debug/savemanager.o
+debug/shopgame.o
+debug/timercore.o
+debug/qrc_RAWDATA.o
+debug/moc_sapergamewindow.o

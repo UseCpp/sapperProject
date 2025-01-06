@@ -3,6 +3,9 @@
 
 #include "player.h"
 
+//TODO: Исправить название класса, поменять комментарии
+//      Далее какая-то мешанина по public-private-public. Читать это буквально неприятно, из-за чего непонятно, зачем вообще нужен этот класс.
+
 enum class ShopResult {
     success,
     noInventorySpace,

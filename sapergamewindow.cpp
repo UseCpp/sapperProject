@@ -35,6 +35,7 @@ void saperGameWindow::destroyGame(){
     timer->stop();
     timer->reset();
     _bEnableMovement = false;
+    //TODO: странная экономия строк.
     delete _ptrShopGame;    _ptrShopGame = nullptr;
     delete _ptrGridLayout;  _ptrGridLayout = nullptr;
     delete _ptrGameField;   _ptrGameField = nullptr;
@@ -76,6 +77,7 @@ void saperGameWindow::on_demoMove_QPB_clicked()
 
 void saperGameWindow::saveGame(const std::string &fileName) {
     SaveData data{};
+    // TODO: это вынести в конструктор SaveData
     data.experience = _ptrPlayerProfile->getPlayerXP();
     data.levelPlayer = _ptrPlayerProfile->getPlayerLvl();
     data.sTime = _ptrPlayerProfile->getTime();
@@ -87,6 +89,7 @@ void saperGameWindow::saveGame(const std::string &fileName) {
 void saperGameWindow::loadGame(const std::string &fileName) {
     SaveData data = SaveManager::load(fileName);
 
+    //TODO: тоже самое. Вынести в отдельный метод.
     _ptrPlayerProfile->setExpirience(data.experience);
     _ptrPlayerProfile->setPlayerLvl(data.levelPlayer);
     _ptrPlayerProfile->setLose(data.iLoseCount);
@@ -200,6 +203,7 @@ void saperGameWindow::makeFieldWindow() {
     ui->fieldPlay_QGB->setLayout(_ptrGridLayout);
 
     _ptrPlayerLabel = new QLabel(ui->fieldPlay_QGB);
+    // TODO: Посмотри, как правильно сделать сепаратор в пути. 
     _ptrPlayerLabel->setPixmap(QPixmap("://RAWDATA/game/playerCell.png"));
     _ptrPlayerLabel->setFixedSize(32, 32);
     _ptrPlayerLabel->setScaledContents(true);
@@ -254,6 +258,7 @@ void saperGameWindow::placeFlag() {
 
     switch (result){
     case playerEventResult::success:
+        // TODO: много привязок жестких к позициям. Вынести это в отдельный хедер по константам. 
         if (cellLabel) cellLabel->setPixmap(QPixmap("://RAWDATA/game/flagCell.png"));
         playSound("qrc:/RAWDATA/sound/placeItem.mp3");
         break;

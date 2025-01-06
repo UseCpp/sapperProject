@@ -27,6 +27,7 @@ void TimerCore::reset() {
 // Возвращает прошедшее время в миллисекундах
 long long TimerCore::elapsedMilliseconds() const {
     long long totalMs = m_accumulatedDuration;
+    // TODO: код повторяет метод stop. Нужно пересмотреть структуру данных методов.  
     if (m_isRunning) {
         auto now = std::chrono::steady_clock::now();
         totalMs += std::chrono::duration_cast<std::chrono::milliseconds>(now - m_startPoint).count();

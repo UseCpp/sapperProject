@@ -100,6 +100,7 @@ playerEventResult player::useScanner(gameField* ptrGameField, std::vector<std::p
             }
         }
     }
+    //TODO: что с код-стайлом.
     if(iBombCells.empty()) return playerEventResult::fail;
     else {
         _iCountScanner--;

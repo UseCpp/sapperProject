@@ -1,5 +1,5 @@
 #include "playerprofile.h"
-
+//TODO: гетеры и сетеры вынести в хедер. Конструктор можно так же сделать компакнтным и вынести в хедер
 PlayerProfile::PlayerProfile() {
     _iExperience=0;
     _iLevelPlayer=1;

@@ -11,6 +11,7 @@
 #include <QDebug>
 
 #include "cell.h"
+//TODO: почему длинные методы в хедере?
 
 class gameField : public cell
 {
@@ -31,6 +32,7 @@ private:
 
     // Функция для поиска пути от старта к выходу (BFS)
     bool findPath() {
+        // Громозкий метод. BFS реализовать в виде шаблонного метода: класс, который реализует BFS и имеет абстрактные методы, которые вызываются при посещении ноды.
         std::vector<std::vector<bool>> visited(size, std::vector<bool>(size, false));
         std::queue<std::pair<int, int>> queue;
 
@@ -115,6 +117,7 @@ public:
             throw qDebug() << "Не удалось найти путь от старта к выходу";
         }
 
+        // TODO: одинаковые алгоритмы для магазинов и бомб, разобраться.
         // Установка магазинов
         int placedShops = 0;
         while (placedShops < shopCount) {

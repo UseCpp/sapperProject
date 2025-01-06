@@ -5,7 +5,8 @@
 #include "gamefield.h"
 #include "savemanager.h"
 #include <QDebug>
-
+//TODO: что с названиями?
+//TODO: опять английские комментарии
 enum class playerEventResult {
     success,
     undoEvent,

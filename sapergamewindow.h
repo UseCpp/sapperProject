@@ -24,6 +24,9 @@
 #include "shopgame.h"
 #include "timercore.h"
 
+//TODO: почему такая мешанина русских и английских комментариев? 
+//TODO: поля должны быть объявлены рядом, методы так же рядом. 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class saperGameWindow;
